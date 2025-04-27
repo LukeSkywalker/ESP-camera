@@ -1,0 +1,20 @@
+#pragma once
+#include <Arduino.h>
+#include <esp32cam.h>
+
+/*  Tiny wrapper around esp32cam::capture()
+ *  Gives three “looks” and hides the sensor-register voodoo.
+ */
+class CamController {
+public:
+  enum Mode : uint8_t { COLOUR = 0, BW = 1, VINTAGE = 2 };
+
+  bool begin(uint16_t x = 1024, uint16_t y = 768, uint8_t jpegQ = 80);
+  void  setMode(Mode m);
+  Mode  mode() const                 { return current; }
+  std::unique_ptr<esp32cam::Frame> capture();   // JPEG ptr
+
+private:
+  void applyMode();
+  Mode current = COLOUR;
+};
