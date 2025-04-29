@@ -35,16 +35,12 @@ void CamController::applyMode()
       s->set_contrast  (s, 0);
       break;
 
-    case BW:                           // classic B&W
-      s->set_special_effect(s, 2);     // grayscale
-      s->set_saturation(s, -2);        // cut colour noise
+    case NEG:
+      s->set_special_effect(s, 1);
       break;
-
+      
     case VINTAGE:                      // warm sepia + punch
-      s->set_special_effect(s, 6);     // sepia
-      s->set_brightness  (s, 1);
-      s->set_contrast    (s, 1);
-      s->set_saturation  (s, -1);      // mute colours a touch
+      s->set_special_effect(s, 6);     // sepia    
       break;
   }
 }
