@@ -7,7 +7,7 @@
  */
 class CamController {
 public:
-  enum Mode : uint8_t { COLOUR = 0, BW = 1, VINTAGE = 2 };
+  enum Mode : uint8_t { COLOUR = 0, NEG = 1, BW = 2, VINTAGE = 3 };
 
   bool begin(uint16_t x = 1024, uint16_t y = 768, uint8_t jpegQ = 80);
   void  setMode(Mode m);
