@@ -40,11 +40,6 @@ void setup()
   pinMode(MODE_TRIGGER_PIN, INPUT_PULLDOWN);
   pinMode(FLASH_PIN, OUTPUT);
 
-  if (!cam.begin(1024, 768, 75)) {  // XGA + mid-quality = sharp w/ grain
-    Serial.println("Camera init failed");
-    while (true) delay(1000); // Halt forever
-  }
-
   WiFi.softAP(AP_SSID, AP_PASS);
   Serial.print("AP IP: "); Serial.println(WiFi.softAPIP());
 
@@ -97,4 +92,3 @@ void loop()
 
   delay(10); // Short delay for stability
 }
-
