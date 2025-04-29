@@ -9,7 +9,7 @@ class CamController {
 public:
   enum Mode : uint8_t { COLOUR = 0, NEG = 1, BW = 2, VINTAGE = 3 };
 
-  bool begin(uint16_t x = 1024, uint16_t y = 768, uint8_t jpegQ = 80);
+  bool begin(uint16_t x = 1600, uint16_t y = 1200, uint8_t jpegQ = 85);
   void  setMode(Mode m);
   Mode  mode() const                 { return current; }
   std::unique_ptr<esp32cam::Frame> capture();   // JPEG ptr
