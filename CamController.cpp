@@ -38,9 +38,13 @@ void CamController::applyMode()
     case NEG:
       s->set_special_effect(s, 1);
       break;
-      
+
+    case BW:                           // classic B&W
+      s->set_special_effect(s, 2);     // grayscale 
+      break;
+
     case VINTAGE:                      // warm sepia + punch
-      s->set_special_effect(s, 6);     // sepia    
+      s->set_special_effect(s, 3);     // sepia    
       break;
   }
 }
